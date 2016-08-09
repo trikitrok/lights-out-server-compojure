@@ -1,6 +1,6 @@
 # lights-out-server
 
-FIXME
+Lights out kata server in Clojure using Compojure
 
 ## Prerequisites
 
