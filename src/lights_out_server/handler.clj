@@ -16,8 +16,7 @@
     (let [x (Integer/parseInt x)
           y (Integer/parseInt y)]
       (lights/flip-lights [x y])
-      {:status 200 :body {:lights @lights/lights}}))
-  )
+      {:status 200 :body {:lights @lights/lights}})))
 
 (def app
   (-> app-routes
