@@ -1,6 +1,6 @@
 (ns lights-out-server.lights)
 
-(def lights (atom [nil]))
+(def lights (atom nil))
 
 (def ^:private light-on 1)
 (def ^:private light-off 0)
@@ -41,8 +41,8 @@
 (defn- num-colums []
   (count (first @lights)))
 
-(defn reset-lights [m n]
+(defn reset-lights! [m n]
   (reset! lights (all-lights-on m n)))
 
-(defn flip-lights [pos]
+(defn flip-light! [pos]
   (swap! lights (partial flip-neighbors (num-rows) (num-colums) pos)))

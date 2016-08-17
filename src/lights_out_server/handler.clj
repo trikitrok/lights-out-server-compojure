@@ -10,14 +10,13 @@
   (POST "/reset-lights" [m n]
     (let [m (Integer/parseInt m)
           n (Integer/parseInt n)]
-      (println m n)
-      (lights/reset-lights m n)
+      (lights/reset-lights! m n)
       {:status 200 :body {:lights @lights/lights}}))
 
   (POST "/flip-light" [x y]
     (let [x (Integer/parseInt x)
           y (Integer/parseInt y)]
-      (lights/flip-lights [x y])
+      (lights/flip-light! [x y])
       {:status 200 :body {:lights @lights/lights}})))
 
 (def app
