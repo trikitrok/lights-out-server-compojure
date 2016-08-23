@@ -9,7 +9,7 @@
       (is (= (:status response) 200))
       (is (= (:body response) "{\"lights\":[[1,1,1],[1,1,1],[1,1,1]]}"))))
 
-  (testing "fliping lights"
+  (testing "flipping lights"
 
     (app (mock/request :post "/reset-lights" {:m 3 :n 3}))
 
@@ -17,7 +17,7 @@
       (is (= (:status response) 200))
       (is (= (:body response) "{\"lights\":[[0,0,1],[0,1,1],[1,1,1]]}"))))
 
-  (testing "fliping lights twice"
+  (testing "flipping lights twice"
 
     (app (mock/request :post "/reset-lights" {:m 3 :n 3}))
     (app (mock/request :post "/flip-light" {:x 1 :y 1}))
